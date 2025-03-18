@@ -7,7 +7,7 @@ menu = """
 
 => """
 
-saldo = 0
+saldo = 0.0
 limite = 500
 numero_saques = 0
 LIMITE_SAQUES = 3
@@ -15,18 +15,36 @@ extrato = """
 ==== Extrato ====
 """
 
+def registrar_extrato(tipo, valor):
+    global extrato
+    if tipo == "1":
+        extrato += f"Depósito - {valor}\n"
+    elif tipo == "2":
+        extrato += f"Saque - {valor}\n"
+
+def depositar():
+    global saldo
+    deposito = float(input("Informe o valor do depósito:\n"))
+    saldo += deposito
+    registrar_extrato("1", deposito)
+    return deposito
+
+# def sacar():
+#     global saldo
+    
+
 
 while True:
     opcao = input(menu)
 
     if opcao == "1":
-        deposito = float(input("Digite o valor do depósito:\n"))
-        saldo += deposito
-        extrato += f"- {deposito}\n"
-        print(saldo)
+        depositar()
+        print("Depósito realizado com sucesso!")
 
     elif opcao == "2":
-        print("Saque")
+        numero_saques += 1
+        if numero_saques > 3:
+            print("Saque")
 
     elif opcao == "3":
         print(extrato)
