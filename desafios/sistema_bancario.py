@@ -12,7 +12,7 @@ limite = 500.0
 numero_saques = 0
 LIMITE_SAQUES = 3
 extrato = ""
-def registrar_extrato(tipo, valor):
+def registrar_transacao(tipo, valor):
     global extrato
     if tipo == "1":
         extrato += f"""
@@ -27,7 +27,7 @@ def depositar():
     global saldo
     deposito = float(input("Informe o valor do depósito:\n"))
     saldo += deposito
-    registrar_extrato("1", deposito)
+    registrar_transacao("1", deposito)
     return deposito
 
 def sacar():
@@ -38,7 +38,7 @@ def sacar():
     if saque > limite: print("Limite por saque é R$500,00")
 
     saldo -= saque
-    registrar_extrato("2", saque)
+    registrar_transacao("2", saque)
     numero_saques += 1
         
     
