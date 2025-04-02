@@ -1,4 +1,7 @@
+# Conjunto de elementos únicos não ordenados.
 # Usamos sets para representar conjuntos matemáticos ou eliminar itens duplicados.
+# Pode ser declarado usando {}
+# São mutáveis
 
 numeros = set([1, 2, 3, 1, 3, 4])
 print(numeros)
