@@ -5,7 +5,7 @@ print(data)
 
 print(date.today())
 
-data_hora = datetime(2025, 4, 12, 23, 14, 20)
+data_hora = datetime(2025, 4, 12, 23, 14, 20)  # data, hora, minuto e segundo
 print(data_hora)
 print(datetime.today())
 
